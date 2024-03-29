@@ -10,8 +10,8 @@ const getProductsFromDb=async()=>{
 // POST
 const saveProductToDb=async(product:Product)=>{
     // saving product in DB
-    const data=await model.create(product)
-    return {data,product}
+    const response=await model.create(product)
+    return response
 }
 // GET ONE 
 const getOneProductFromDb=async(id:string)=>{
@@ -21,7 +21,6 @@ const getOneProductFromDb=async(id:string)=>{
 }
 // PATCH
 const updateProductToDb=async(id:string,payload:Product)=>{
-    
     const update_product = await model.findOneAndUpdate(
         { _id: id },
         payload as UpdateQuery<Product>, // Especificar el tipo como UpdateQuery<Product>

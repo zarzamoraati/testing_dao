@@ -35,7 +35,6 @@ const createProduct = async(req:Request,res:Response)=>{
     try{
         // validating request
         const params = req.body
-        
         if (_.isEmpty(params)){
            const err = new Error("The request has not an attribute body")
            return res.status(400).json(err)
