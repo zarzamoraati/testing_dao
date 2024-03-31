@@ -1,3 +1,3 @@
 import {app} from "../src/index"
 
-export {app}
+module.exports=app
